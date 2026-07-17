@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is the correct file extension for Python files?",
+    "options": [".py", ".python", ".pt", ".pyt"],
+    "answer": ".py"
+  },
+  {
+    "question": "Which keyword is used to define a function in Python?",
+    "options": ["function", "def", "func", "define"],
+    "answer": "def"
+  },
+  {
+    "question": "Which of these is a mutable data type in Python?",
+    "options": ["tuple", "string", "list", "int"],
+    "answer": "list"
+  },
+  {
+    "question": "What does the 'len()' function do?",
+    "options": [
+      "Returns the length of an object",
+      "Returns the last element",
+      "Deletes an object",
+      "Converts to lowercase"
+    ],
+    "answer": "Returns the length of an object"
+  },
+  {
+    "question": "Which symbol is used for comments in Python?",
+    "options": ["//", "#", "/*", "--"],
+    "answer": "#"
+  }
+]
