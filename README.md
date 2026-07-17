@@ -1,118 +1,49 @@
+# Python Quiz App
 
-# 🎯 ExamWatch: Cheating Detection using YOLO11m Pose Estimation
+A simple interactive quiz application built with **Tkinter** (GUI) and **JSON** (question storage). Test your knowledge with multiple-choice questions, a countdown timer, and a saved high-score leaderboard.
 
-**ExamWatch** is an AI-powered system that detects suspicious student behavior such as **looking sideways or potential cheating** during classroom or online examinations.
-Using **YOLO11m Pose Estimation**, it tracks **head pose angles (yaw and pitch)** to distinguish between **focused** and **suspicious sideways glances**, ensuring exam integrity through **computer vision** and **deep learning**.
+## Features
 
----
+- Multiple-choice questions loaded from `data.json`
+- Questions shuffle randomly each time you play
+- 15-second countdown timer per question
+- Score tracking with a results screen
+- High-score leaderboard saved locally in `highscores.json`
+- Restart button to play again instantly
 
-## 🧠 Features
+## Requirements
 
-* 🎥 Real-time detection of **student head movement and posture**
-* 🧍 Tracks **yaw (left–right)** and **pitch (up–down)** angles
-* 🕵️ Detects **focused** and **suspicious** head orientations
-* 📊 Produces **annotated video output** with visual alerts
-* ⚡ Built with **YOLO11m Pose**, **OpenCV**, and **cvzone**
+- Python 3.7 or higher (Tkinter comes built-in with standard Python installs)
 
----
+## How to Run
 
-## 🧰 Tech Stack
+1. Clone this repository:
+   ```
+   git clone https://github.com/eishalfahimkhancode/python-quiz-app-.git
+   cd python-quiz-app-
+   ```
 
-| Component       | Description                 |
-| --------------- | --------------------------- |
-| **Model**       | YOLO11m Pose (Ultralytics)  |
-| **Framework**   | Python                      |
-| **Libraries**   | OpenCV, cvzone, NumPy, math |
-| **Environment** | Google Colab / VS Code      |
+2. Run the app:
+   ```
+   python quiz.py
+   ```
 
----
+3. Enter your name, answer the questions before time runs out, and see your score and ranking at the end!
 
-## ⚙️ Installation
+## Editing Questions
 
-### 1️⃣ Clone the repository
+Questions are stored in `data.json` in this format:
 
-```bash
-git clone https://github.com/SyedaEmanSaleem/ExamWatch.git
-cd ExamWatch
+```json
+{
+  "question": "What is the correct file extension for Python files?",
+  "options": [".py", ".python", ".pt", ".pyt"],
+  "answer": ".py"
+}
 ```
 
-### 2️⃣ Install dependencies
+Add, remove, or edit entries in this file to customize the quiz content.
 
-```bash
-pip install ultralytics opencv-python cvzone numpy
-```
+## License
 
-### 3️⃣ Download YOLO11m Pose Model
-
-```python
-from ultralytics import YOLO
-model = YOLO('yolo11m-pose.pt')
-```
-
-### 4️⃣ Run the project
-
-```bash
-python examwatch.py
-```
-
----
-
-## 🧩 How It Works
-
-1. The **YOLO11m Pose model** detects students and extracts body keypoints (nose, eyes, shoulders).
-2. The system calculates **yaw** (left–right) and **pitch** (up–down) angles for each detected student.
-3. Based on these angles, it classifies head movement as:
-
-| Classification      | Behavior                                          | Indicator |
-| ------------------- | ------------------------------------------------- | --------- |
-| 🟢 Focused          | Head facing forward/downward (normal behavior)    | ✅ Green   |
-| 🔴 Looking Sideways | Head turned beyond threshold (potential cheating) | ⚠️ Red    |
-
-🎥 The annotated video output displays detections in **real-time**.
-
----
-
-## 🖼️ Example Output
-
-| Focused | Looking Sideways |
-| ------- | ---------------- |
-| ✅ Green | ⚠️ Red           |
-
----
-
-## 📦 Requirements
-
-* Python ≥ 3.8
-* OpenCV
-* cvzone
-* ultralytics
-* numpy
-
----
-
-## 🚀 Future Enhancements
-
-* 👁️ Add **eye gaze estimation** for higher accuracy
-* 🧠 Apply **temporal filters** to smooth pose variations
-* 🌐 Enable **real-time webcam monitoring**
-* 📈 Develop a **dashboard for live analytics**
-
----
-
-## 🧑‍💻 Author
-
-**Syeda Eman Saleem**
-[GitHub](https://github.com/SyedaEmanSaleem) • [LinkedIn](#)
-
----
-
-## 🏷️ License
-
-Released under the **MIT License** — free to use, modify, and distribute.
-
----
-
-### 🔖 Hashtags
-
-#AIProjects #ComputerVision #YOLO11 #DeepLearning #PoseEstimation #ExamProctoring #CheatingDetection #MachineLearning #OpenCV #Ultralytics #Python #ExamWatch
-
+See [LICENSE](LICENSE) for details.
